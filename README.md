@@ -381,6 +381,8 @@ rm(list = c("p.bulkyspend",
 
 <figure><img src="img/treat_control_withmatch.png"><figcaption></figcaption></figure>
 
+* The the purchase behaviors between treatment group (multichannel customers) and control group (online customers) becomes more comparable now (Expenditures, Planned Products and Sensory Products are similar in trend)
+
 ### DiD Estimation
 
 We estimate a difference in all our variables of interest between the matched pairs
@@ -515,8 +517,9 @@ for(i in 1:length(formulas)){
 
 |      | plannedspend               | bulkyspend               | sensoryspend              | frequency         | monetary               | spend               |
 |------|-------------------|-------------------|------------------|------------|-------------------|------------------|
-| Short    | -2722.94 (5955.72) | -11437.19 (4296.94) | -7402.63 (3372.46) | -0.08 (0.06) | -5890.67 (4613.12) | -17852.09 (17367.41) |
-| Long    | -4375.8 (7599.03) | -34133.54 (5482.55) | -5535.91 (4302.09) | 0.09 (0.08) | -2742.5 (5909.1)  | -13384.75 (22159.43) |
-| R-squared    | 0.59              | 0.67               | 0.81              | 0.36       | 0.69              | 0.53              |
+| Short    |-3922.08 (6770.76) | -6208.33 (4940.54) | -5332.54 (5847.92) | -0.08 (0.05) | -108.41 (310.24) | -5623.13 (11602.15) |
+| Long    | 	-8410.46 (9086.66) | -7355.19 (6630.42) | -1524.76 (7848.16) | 0.08 (0.07) | -706.2 (416.36)  | -27943.8 (15570.59) |
+| R-squared    | 0.49              | 0.46               | 0.28              | 0.66       | 0.78              | 0.73              |
 
-* For this simulated dataset,significant (short-run) effect on **bulkyspend**	and **sensoryspend** and significant (long-run) effect on **bulkyspend**
+* For this simulated dataset,significant negative (short-run) effect on **frequency**	implying customers visit this retailer less after adopting online channel
+* For this simulated dataset,significant negative (long-run) effect on **spend** implying customers spend less after adopting online channel in the long run
