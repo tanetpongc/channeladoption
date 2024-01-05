@@ -63,7 +63,7 @@ df <- fread("../data/df.csv")
 | diapers  | Total number of unique product (SKU) purchased on deal                    |
 
 ### Model-free Evidence
-We compare customer purchasing behaviors pre and post the online channel inroduction.
+We compare customer purchasing behaviors pre and post the online channel introduction.
 <details>
   <summary>Mean comparisons across customer between pre and post introduction </summary>
 
@@ -257,9 +257,7 @@ df.week = rbind(
 </details>
 
 We employ propensity score matching:
-$$
-\text{Treat}_{i,post} = \alpha_0 + \alpha_1 \text{Frequency}_{i,pre} + \alpha_2 \text{Monetary Value}_{i,pre} + \alpha_4 \text{Distant}_{i,pre} + \varepsilon_i
-$$
+<figure><img src="img/eq1.gif"><figcaption></figcaption></figure>
 
 *Note for this simulated dataset, we only match with respect to monetary, frequency and diapers*
 
@@ -387,9 +385,9 @@ rm(list = c("p.bulkyspend",
 
 We estimate a difference in all our variables of interest between the matched pairs
 
-$$
-Y_{i,t} = \beta_1 \text{Short}_{i,t} + \beta_2 \text{Long}_{i,t} + \beta_3 \text{Volume}_{i,t} + \beta_4 \text{Deals}_{i,t} + \beta_5 \text{Diapers}_{i,t} + \xi_t + \varepsilon_i
-$$
+<figure><img src="img/eq2.gif"><figcaption></figcaption></figure>
+
+
 
 where $Y_{i,t}$ is the difference between the matched pair \( i \) in period \( t \) of the purchase behaviors (Planning, Heavy/Bulky, Sensory, Frequency, Monetary Value, and Expenditures)
 
@@ -520,3 +518,5 @@ for(i in 1:length(formulas)){
 | Short    | -2722.94 (5955.72) | -11437.19 (4296.94) | -7402.63 (3372.46) | -0.08 (0.06) | -5890.67 (4613.12) | -17852.09 (17367.41) |
 | Long    | -4375.8 (7599.03) | -34133.54 (5482.55) | -5535.91 (4302.09) | 0.09 (0.08) | -2742.5 (5909.1)  | -13384.75 (22159.43) |
 | R-squared    | 0.59              | 0.67               | 0.81              | 0.36       | 0.69              | 0.53              |
+
+* For this simulated dataset,significant (short-run) effect on **bulkyspend**	and **sensoryspend** and significant (long-run) effect on **bulkyspend**
